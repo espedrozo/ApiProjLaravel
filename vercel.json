@@ -6,7 +6,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/public/.*",
+      "status": 404,
+      "continue": true
+    },
+    {
+      "src": "/",
       "dest": "/index.php"
     }
   ],
