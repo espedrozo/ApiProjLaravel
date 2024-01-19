@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "index.php",
+      "dest": "index.html",
       "methods": [
         "GET",
         "POST",
@@ -17,7 +17,7 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "index.php",
+      "dest": "index.html",
       "methods": [
         "GET",
         "POST",
