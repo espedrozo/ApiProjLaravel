@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <title>My Laravel API</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/frontConnection.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>My Laravel API</h1>
+        </header>
+
+        <h3 id="insert-customer-title">Insert New Customer</h3>
+
+        <form id="addCustomerForm" onsubmit="event.preventDefault(); addCustomer();">
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" type="text" name="firstname" placeholder="Customer first name" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="lastname">Last Name</label>
+                    <input id="lastname" type="text" name="lastname" placeholder="Customer last name" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="birth_date">Birth Date:</label>
+                    <input type="date" id="birth_date" name="birth_date" required>
+                </div>
+            </div>
+
+            <button type="submit">Add Customer</button>
+        </form>
+        
+        <div>
+            <h3 id="db-title">Customer's Database</h3>
+            <button id="getCustomersButton" type="button" onClick="getCustomers()">Get Customers</button>
+            <div id="display-layout">
+                <div id="customerDisplay"></div>
+            </div>
+
+            <h3 id="db-title">Client's Database</h3>
+            <button id="getClientsButton" type="button" onClick="getClients()">Get Clients</button>
+            <div id="display-layout">
+                <div id="clientDisplay"></div>
+            </div>
+
+        </div>
+
+        <section class="buttons-section">
+            <button id="syncButton" type="button" onClick="syncDatabases(); getClients()">Synchronize Databases</button>
+        </section>
+
+    </div>
+</body>
+
+</html>
