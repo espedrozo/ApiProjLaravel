@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "/public/**/*"},
-    { "src": "/index.html" }
+    { "src": "/public/**/*", "use": "@now/static" },
+    { "src": "/index.html", "use": "@now/static" }
   ],
   "routes": [
     {
