@@ -1,4 +1,3 @@
-
 function syncDatabases() {
     // Fazer a requisição para a rota da API Laravel
     axios.get('api/syncDatabases')
