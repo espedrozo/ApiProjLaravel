@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/**",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.php"
+    }
+  ],
+  "env": {
+    "ASSET_URL": "/",
+    "APP_KEY": "base64:J6jWi+134Q5E6YV5tmmjivYwJjC4zjbEmBKXMzA06Vw="
+  }
+}
