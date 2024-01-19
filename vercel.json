@@ -2,12 +2,19 @@
   "version": 2,
   "routes": [
     {
-      "src": "/",
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/api/(.*)",
       "dest": "/index.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ],
   "env": {
-    "ASSET_URL": "/",
-    "APP_KEY": "base64:J6jWi+134Q5E6YV5tmmjivYwJjC4zjbEmBKXMzA06Vw="
+    "ASSET_URL": "/public"
   }
 }
