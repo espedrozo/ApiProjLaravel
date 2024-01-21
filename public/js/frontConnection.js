@@ -14,6 +14,7 @@ function getCustomers() {
     // Fazer a requisição para a nova rota da API Laravel
     axios.get('api/customers')
         .then(response => {
+            console.log(response.data);
             displayCustomers(response.data);
         })
         .catch(error => {
@@ -22,6 +23,9 @@ function getCustomers() {
 };
 
 function displayCustomers(customers) {
+
+    console.log('Type of customers:', typeof customers); // Adicione este log
+    console.log('Customers:', customers); 
     // Limpar o conteúdo anterior
     document.getElementById('customerDisplay').innerHTML = '';
 
