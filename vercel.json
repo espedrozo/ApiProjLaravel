@@ -6,6 +6,16 @@
   ],
   "routes": [
     {
+      "src": "/resources/css/(.*)",
+      "dest": "/resources/$1",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" }
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/public/js/$1",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" }
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html",
       "methods": ["GET", "POST", "PUT", "DELETE"]
