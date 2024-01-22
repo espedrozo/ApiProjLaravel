@@ -23,9 +23,7 @@ function getCustomers() {
 };
 
 function displayCustomers(customers) {
-
-    console.log('Type of customers:', typeof customers); // Adicione este log
-    console.log('Customers:', customers); 
+    
     // Limpar o conteúdo anterior
     document.getElementById('customerDisplay').innerHTML = '';
 
@@ -35,7 +33,7 @@ function displayCustomers(customers) {
 
     // Cabeçalho da tabela
     var headerRow = document.createElement('tr');
-    ['ID', 'First Name', 'Last Name', 'Sex', 'Birth Date', 'Status', 'Updated at'].forEach(function (column) {
+    ['ID', 'First Name', 'Last Name', 'Sex', 'Birth Date', 'Status'].forEach(function (column) {
         var th = document.createElement('th');
         th.textContent = column;
         headerRow.appendChild(th);
@@ -45,7 +43,7 @@ function displayCustomers(customers) {
     // Corpo da tabela
     customers.forEach(function (customer) {
         var tr = document.createElement('tr');
-        ['id', 'first_name', 'last_name', 'sex', 'birth_date', 'status', 'updated_at'].forEach(function (field) {
+        ['id', 'first_name', 'last_name', 'sex', 'birth_date', 'status'].forEach(function (field) {
             var td = document.createElement('td');
             td.textContent = customer[field];
             tr.appendChild(td);
@@ -128,7 +126,7 @@ function addCustomer() {
     console.log('lastName:', lastName);
     console.log('gender:', gender);
     console.log('birthDate:', birthDate);
-    console.log(finalDateTime);
+    //console.log('updated_at',finalDateTime);
 
 
     axios.post('api/customers', {
@@ -136,8 +134,8 @@ function addCustomer() {
         last_name: lastName,
         sex: gender,
         birth_date: birthDate,
-        status: 1,
-        updated_at: finalDateTime
+        status: 1
+        //updated_at: finalDateTime
     })
         .then(function (response) {
             console.log(response.data);
